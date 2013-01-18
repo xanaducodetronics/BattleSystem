@@ -11,7 +11,10 @@ public:
 
 private:
 	ICharacter(void);
+	ICharacter(const ICharacter& other);
 	~ICharacter(void);
+	ICharacter& operator =(const ICharacter& other);
+
 protected:
 	int hitPoints;
 	IWeapon currentWeapon;	
