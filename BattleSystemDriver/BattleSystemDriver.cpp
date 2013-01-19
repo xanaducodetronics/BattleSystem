@@ -3,12 +3,15 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <HeavyPelt.h>
 
 int main(int argc, char* argv[])
 {
-	std::cout << "Hello world!" << std::endl;
-	char whatever;
-	std::cin >> whatever;
+	IArmor* pelt = new HeavyPelt(15);
+	delete pelt;
+
+	char something;
+	std::cin >> something;
 	return 0;
 }
 

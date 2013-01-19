@@ -1,21 +1,18 @@
 #pragma once
 #include "BattleSystemGlobals.h"
-#include "iarmor.h"
+#include "IArmor.h"
 #include "IWeapon.h"
-#include <functional>
+
 
 class HeavyPelt :
 	public IArmor
 {
 public:
-	HeavyPelt(void);
-	~HeavyPelt(void);
-
-private:
-	Action breakAction;
-	std::function<void ()> breakAction2;
-	double integrity;
-	int damageResistance;
-
+	HeavyPelt(int resistance);
+	~HeavyPelt();
+	void SetIntegrity(double integrity);
+	double GetIntegrity() const;
+	int GetResistance() const;
+	void SetBreakFunction(std::function<void (const std::string&)>& func);
 };
 
