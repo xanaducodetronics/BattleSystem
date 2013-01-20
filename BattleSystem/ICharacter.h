@@ -5,18 +5,19 @@
 class ICharacter
 {
 public:
-	virtual void SetWeapon(IWeapon &weapon) = 0;
-	virtual void Attack(ICharacter &other) const = 0;
-	virtual const IArmor*  GetCurrentArmor() const = 0;
-	virtual void SetCurrentArmor(IArmor *armorObj) = 0;
+	virtual void SetWeapon(IWeapon* weapon);
+	virtual void Attack(ICharacter &other) const;
+	virtual IArmor* GetCurrentArmor() const;
+	virtual void SetCurrentArmor(IArmor *armorObj);
+	~ICharacter(void);
 	
 protected:
 	ICharacter(void);
+private:
 	ICharacter(const ICharacter& other);
-	~ICharacter(void);
 	ICharacter& operator =(const ICharacter& other);
 	int hitPoints;
-	IWeapon currentWeapon;	
+	IWeapon* currentWeapon;	
 	IArmor* armor;
 };
 
